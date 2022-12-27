@@ -40,4 +40,4 @@ c. Course having at least 1 vacancy left
 d. Trainee have completed the prerequisite course of the selected course if exist
 e. Enrolment request is done in duration of enrolment data
 
-##Further details can be checked in the text files and charts that I attached in the repo. 
+Further details can be checked in the text files and charts that I attached in the repo. 
