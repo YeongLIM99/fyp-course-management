@@ -34,10 +34,10 @@ Change following setting:***
 11. View own results (trainee)
 
 For the 6th function, the conditions to be examined are:
-a. Identity of the request user as a trainee
-b. Not completed or enrolled the course at the moment
-c. Course having at least 1 vacancy left
-d. Trainee have completed the prerequisite course of the selected course if exist
-e. Enrolment request is done in duration of enrolment data
+- Identity of the request user as a trainee
+- Not completed or enrolled the course at the moment
+- Course having at least 1 vacancy left
+- Trainee have completed the prerequisite course of the selected course if exist
+- Enrolment request is done in duration of enrolment data
 
-Further details can be checked in the text files and charts that I attached in the repo. 
+##### Further details can be checked in the text files and charts that I attached in the repo. 
