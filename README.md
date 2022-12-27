@@ -4,6 +4,7 @@
 ## The system is bulit fully using Django only where no other front-end framework is used, CSS, HTML, Bootstrap and JS such as Chart.js is used for front end only. 
 
 **Please go to your console and direct the path to the location of the folder you have chosen to run following commands.**
+
 Some basic commands you might requried in using the system:
 1. Run installation for django: pip install django
 2. Run and test the server: python manage.py runserver
