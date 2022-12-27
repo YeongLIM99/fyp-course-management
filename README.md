@@ -15,7 +15,7 @@
 ***Go to trial > settings.py to change database for storage and host email to send message to other accounts.
 Change following setting:***
 1. For database, where what I used is MySQL here, you might use other database
-![email](https://github.com/YeongLIM99/fyp-course-management/blob/main/Images/Database.PNGraw=true)
+![email](https://github.com/YeongLIM99/fyp-course-management/blob/main/Images/Database.PNG?raw=true)
 2. For host email, the superuser account to send the email to other recipients through the uses of SMTP
 ![email](https://github.com/YeongLIM99/fyp-course-management/blob/main/Images/Email.PNG?raw=true)
 
