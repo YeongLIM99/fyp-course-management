@@ -1,0 +1,100 @@
+{% extends "index/base.html" %}
+{% load static %}
+{% block content %}
+<div class="content-section">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="table-responsive">
+                <h3>Interview Details</h3>
+                <!--Table-->
+                <table class="table">
+                    <!--Table head-->
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th class="th-lg">Applicant</th>
+                        <th class="th-lg">Instructor</th>
+                        <th class="th-lg">Interview Date & Time</th>
+                        <th class="th-lg">Interview Location</th>
+                    </tr>
+                    </thead>
+                    <!--Table body-->
+                    <tbody>
+                    {% for interview in Interview %}
+                    <tr>
+                        <th scope="row">{{interview.id}}</th>
+                        <td>{{ interview.applicant }}</td>
+                        <td>{{ interview.instructor }}</td>
+                        <td>{{ interview.interview_date }}</td>
+                        <td>{{ interview.interview_location }}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <div class="border-top pt-3">
+                <small class="text">Confirm to send?</small>
+                <br>
+                <button>
+                    <a class="ml-2" href="{% url 'send-interview' %}">Send Now!</a>
+                </button>
+             </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <br><br>
+     <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="table-responsive">
+                <h3>Interview Results</h3>
+                <!--Table-->
+                <table class="table">
+                    <!--Table head-->
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th class="th-lg">Applicant</th>
+                        <th class="th-lg">Interview Result</th>
+                        <th class="th-lg">Official email</th>
+                        <th class="th-lg">Backup email</th>
+                    </tr>
+                    </thead>
+                    <!--Table body-->
+                    <tbody>
+                    {% for failed in failed_applicant %}
+                    <tr>
+                        <th scope="row"></th>
+                        <td>{{ failed.username }}</td>
+                        <td>Failed</td>
+                        <td>{{ failed.email }}</td>
+                        <td>{{ failed.backup_email }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% for success in success_applicant %}
+                    <tr>
+                        <th scope="row"></th>
+                        <td>{{ success.username }}</td>
+                        <td>Passed</td>
+                        <td>{{ success.email }}</td>
+                        <td>{{ success.backup_email }}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <div class="border-top pt-3">
+                <small class="text">Confirm to send?</small>
+                <br>
+                <button>
+                    <a class="ml-2" href="{% url 'send-interview-result' %}">Send Now!</a>
+                </button>
+             </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+{% endblock content %}

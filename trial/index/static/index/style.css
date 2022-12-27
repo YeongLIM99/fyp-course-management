@@ -1,0 +1,499 @@
+/*--------------------------------------------------------------
+# General -> OSP assignment 1
+--------------------------------------------------------------*/
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+section {
+  margin: 0px;
+}
+
+body {
+  margin-top: 85px;
+  font-family: "Open Sans" !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+a:link {
+  text-decoration: none !important;
+}
+
+a:visited {
+  text-decoration: none !important;
+}
+
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/*--------------------------------------------------------------
+# General -> Self-defined
+--------------------------------------------------------------*/
+.buttons button {
+  background-color: white;
+  border: 2px solid #5a5af3;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 50px;
+}
+
+/*--------------------------------------------------------------
+# General -> let footer stay at bottom
+--------------------------------------------------------------*/
+div.content {
+     min-height:100vh;
+     display:flex;
+     flex-direction:column;
+     justify-content:space-between;
+}
+
+/*--------------------------------------------------------------
+# Header -> KME
+--------------------------------------------------------------*/
+#header {
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 20px 0;
+  background: #fff;
+}
+
+#header .logo {
+  font-size: 32px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-family: "Poppins", sans-serif;
+}
+
+#header .logo a {
+  color: #5a5af3;
+}
+
+#header .logo img {
+  max-height: 40px;
+}
+
+@media (max-width: 992px) {
+  #header {
+    padding: 12px 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu -> KME
+--------------------------------------------------------------*/
+.navbar {
+  padding: 0;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar ul li {
+  position: relative;
+}
+
+.navbar ul li a, .navbar ul li a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 10px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #434175;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+
+.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+  color: #5a5af3;
+}
+
+.navbar .getstarted, .navbar .getstarted:focus {
+  padding: 6px 25px;
+  margin-left: 30px;
+  border-radius: 50px;
+  color: #5a5af3;
+  border: 2px solid #5a5af3;
+}
+
+.navbar .getstarted:hover, .navbar .getstarted:focus:hover {
+  color: #fff;
+  background: #7272f5;
+}
+/* ---------------------------------------------------
+    FOOTER -> OSP assignment 1
+----------------------------------------------------- */
+footer {
+  padding: 30px;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+
+.footer container row div img {
+  height: 100px;
+  width: 100px;
+}
+
+.copyright {
+  width: 100%;
+  font-weight: bold;
+  padding-top: 50px;
+  text-align: center;
+}
+
+/*--------------------------------------------------------------
+# Home -> OSP assignment 1
+--------------------------------------------------------------*/
+.home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-title {
+  font-weight: bold;
+  font-size: 32px;
+  width: 100%;
+  min-width: 400px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.carousel-caption {
+  top: 0;
+  bottom: 0;
+}
+
+.home-section-1 {
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  background: lightblue
+}
+
+.home-section-1-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.home-section-1-subtitle{
+    color: black;
+}
+
+.home-section-1-text {
+    text-align:justify;
+    font-size: 20px;
+    color: black;
+}
+
+.home_image {
+    opacity: 0.2;
+    width: 800px;
+    height: 450px
+}
+
+.home-section-2 {
+  padding: 0px 250px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 30px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.home-title-2 {
+  font-weight: bold;
+  font-size: 25px;
+  width: 100%;
+  min-width: 400px;
+  margin: 50px 0px;
+  text-align: center;
+}
+
+.flip-card-container {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  min-width: 400px;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 500px;
+  height: 300px;
+  min-width: 400px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 400px;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  min-width: 400px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  color: white;
+  flex-direction: column;
+}
+
+.flip-card-front div {
+  font-weight: bold;
+  font-size: large;
+}
+
+.flip-card-back {
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.c1.flip-card-back,
+.c1.flip-card-front {
+  background: #3d989b;
+}
+
+.c2.flip-card-back,
+.c2.flip-card-front {
+  background: #e36e6b;
+}
+
+.c3.flip-card-back,
+.c3.flip-card-front {
+  background: #f7b63c;
+}
+
+.c4.flip-card-back,
+.c4.flip-card-front {
+  background: #132b4f;
+}
+
+.c5.flip-card-back,
+.c5.flip-card-front {
+  background: #3c280b;
+}
+
+.flip-card-back li {
+  text-align: start;
+}
+
+.flip-card-back ul {
+  padding: 30px 50px;
+}
+
+/*--------------------------------------------------------------
+# Frequently Asked Questions -> KME assignment 2
+--------------------------------------------------------------*/
+.faq{
+    padding:25px;
+}
+
+/* Used in other page as well */
+.section-title {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.faq .faq-list {
+  padding: 0;
+  list-style: none;
+}
+
+.faq .faq-list li {
+  border-bottom: 1px solid #f2f2fe;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.faq .faq-list .question {
+  display: block;
+  position: relative;
+  font-family: #5a5af3;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  padding-left: 25px;
+  cursor: pointer;
+  color: #2a2af0;
+  transition: 0.3s;
+}
+
+.faq .faq-list i {
+  font-size: 16px;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+.faq .faq-list p {
+  margin-bottom: 0;
+  padding: 10px 0 0 25px;
+}
+
+.faq .faq-list .icon-show {
+  display: none;
+}
+
+.faq .faq-list .collapsed {
+  color: black;
+}
+
+.faq .faq-list .collapsed:hover {
+  color: #5a5af3;
+}
+
+.faq .faq-list .collapsed .icon-show {
+  display: inline-block;
+  transition: 0.6s;
+}
+
+.faq .faq-list .collapsed .icon-close {
+  display: none;
+  transition: 0.6s;
+}
+
+/*--------------------------------------------------------------
+# Course List -> Mava
+--------------------------------------------------------------*/
+#course-table {
+    cursor: pointer;
+}
+
+#course-list-body {
+    display: table-row-group;
+    vertical-align: middle;
+}
+
+.alink td {
+    padding: 0.75rem;
+    border-top: 1px solid #dee2e6;
+}
+
+#course-description {
+    vertical-align: top;
+}
+
+.course-image-list {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+}
+/*--------------------------------------------------------------
+# Course Detail -> Mava
+--------------------------------------------------------------*/
+.course-banner {
+    padding-top: 50px;
+    margin-top: -20px;
+}
+
+.course-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+}
+
+.course-name {
+    text-align: center;
+}
+
+.course-date{
+    margin: 30px 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee
+}
+
+.course-date-enrol {
+	margin: 30px 30px;
+    padding-bottom: 30px;
+    border-bottom: none;
+    margin-bottom: 0px
+}
+
+.participant {
+    text-align: center;
+}
+
+/* Used in other page as well */
+.buttons {
+    margin: auto;
+    text-align: center;
+    border: 0;
+}
+
+/*--------------------------------------------------------------
+# Graph -> Self-defined
+--------------------------------------------------------------*/
+.graph{
+    width: 600px;
+    height: 600px
+}

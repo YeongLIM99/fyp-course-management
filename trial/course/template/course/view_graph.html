@@ -1,0 +1,101 @@
+{% extends "index/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="content-section">
+    {% if user.is_superuser %}
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+            <div class="graph">
+                <canvas id="pie-chart"></canvas>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="graph">
+                <canvas id="bar-chart"></canvas>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    {% endif %}
+</div>
+
+<!--Chart.js to show graph-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Pie Chart -->
+<script>
+    var config = {
+      type: 'pie',
+      data: {
+        datasets: [{
+          data: [{% for data in datas %} '{{ data }}', {% endfor %}],
+          backgroundColor: [
+            "red", "yellow", "blue", "green"
+          ]
+        }],
+        labels: [{% for label in labels %} '{{ label }}', {% endfor %}]
+      },
+      options: {
+        plugins: {
+            title: {
+                display: true,
+                text: "Number of trainees passed or failed according to the tests"
+                    }
+                 },
+        responsive: true,
+        maintainAspectRatio: false
+      }
+    };
+
+    var config1 = {
+      type: 'bar',
+      data: {
+        datasets: [{
+          data: [{% for data in datas_attempts %} '{{ data }}', {% endfor %}],
+          backgroundColor: "black"
+        }],
+        labels: [{% for label in labels_attempts %} '{{ label }}', {% endfor %}]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            title: {
+                display: true,
+                text: "Number of trainees passed against extra attempts in tests"
+                    },
+            legend: {
+                display: false
+                    }
+        },
+        scales: {
+            y: {
+                min: 0,
+                max: 20,
+                title: {
+                    display: true,
+                    text: 'Number of trainees who passed'
+                }
+            },
+            x: {
+                min: 0,
+                max: 6,
+                title: {
+                    display: true,
+                    text: 'Number of extra attempts in tests'
+                }
+            }
+        }
+      }
+     };
+
+    window.onload = function() {
+      var ctx = document.getElementById('pie-chart').getContext('2d');
+      window.myPie = new Chart(ctx, config);
+      var ctx1 = document.getElementById('bar-chart').getContext('2d');
+      window.myBar = new Chart(ctx1, config1);
+    };
+</script>
+
+{% endblock content %}

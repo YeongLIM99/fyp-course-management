@@ -1,0 +1,117 @@
+{% extends "index/base.html" %}
+{% load static %}
+{% block content %}
+<section id="course-detail" class="course-detail">
+    <div class="container">
+        <div class="course-banner">
+            <div class="course-name">
+                <h2>{{course.course_code}}</h2>
+            </div>
+            <img class="course-image" src="{{course.course_image.url}}"/>
+        </div>
+        <br><br>
+        <div class="course-content">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="course-aim">
+                        <hr>
+                            <h3>Course Aim</h3>
+                        <hr>
+                        <p class="aim">
+                            {{course.course_aim}}
+                        </p>
+                    </div>
+                    <br>
+                    <div class="course-objective">
+                        <hr>
+                            <h3>Course Objective</h3>
+                        <hr>
+                        <p class="objective">
+                            {{course.course_objectives}}
+                        </p>
+                    </div>
+                    <br>
+                    {% if user == course.instructor or user.is_superuser or user == trainee %}
+                        <div class="course-accessible">
+                            <hr>
+                                <h3>Course Content</h3>
+                            <hr>
+                            <div class="course-survey">
+                                <h5>Survey to be done before the course start:
+                                    <a class="pre-survey" href="https://forms.gle/HJe6CYG6LboHbFEd9">Pre-course survey</a>
+                                </h5>
+                                <br>
+                                <h5>Survey to be done upon the course end:
+                                    <a class="post-survey" href="https://forms.gle/RNSi6m48m21AXgCn6">Post-course survey</a>
+                                </h5>
+                                <br>
+                            </div>
+                            {% if user == course.instructor or user.is_superuser %}
+                                <div class="course-result">
+                                    <h5>Updating results:
+                                        <a class="result-spreadsheet" href="https://docs.google.com/spreadsheets/d/1ahMT9b16ARqZGVa62_EB7cA2d2J1hfNPYJN62moKPW8/edit?usp=sharing">
+                                            Spreadsheet for trainees result
+                                        </a>
+                                    </h5>
+                                </div>
+                                <br>
+                            {% endif %}
+                            <div class="course-material">
+                                <h5>Course Materials: </h5>
+                                {% for material in course.CourseMaterial.all %}
+                                    <a class="material" href="{{ material.material.url }}"> {{material.material_name}} </a>
+                                    <br>
+                                {% endfor %}
+                            </div>
+
+                        </div>
+                    {% endif %}
+                </div>
+                <br><br>
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                    {% if user == course.instructor or user.is_superuser or user == trainee %}
+                        <h2 class="participant">
+                            <a class="ml-2" href="{% url 'view-participant' course.course_code %}">Participants</a>
+                        </h2>
+                    {% endif %}
+                    <br><br>
+                    <div class="section-title">
+                        <h2>Course Schedule</h2>
+                    </div>
+                    <hr>
+                    <div class="course-date-enrol">
+                        Enrolment date: {{course.date_start_enrol}} - {{course.date_end_enrol}}
+                    </div>
+                    <hr>
+                    <div class="course-date">
+                        Course date: {{course.date_start}} - {{course.date_end}}
+                    </div>
+                    <br>
+                    <div class="buttons">
+                        {% if user.is_trainee %}
+                            <button>
+                                <a class="ml-2" href="{% url 'enrol' course.course_code %}">Enrol</a>
+                            </button>
+                        {% elif user == course.instructor %}
+                            <button>
+                                <a class="ml-2" href="{% url 'update-course' course.course_code %}">Update course detail</a>
+                            </button>
+                            <br><br>
+                            <button>
+                                <a class="ml-2" href="{% url 'upload-course-material' course.course_code %}">Upload course material</a>
+                            </button>
+                        {% elif user.is_superuser %}
+                            <button>
+                                <a class="ml-2" href="{% url 'view-graph' course.course_code %}">Graph Results</a>
+                            </button>
+                        {% endif %}
+                    </div>
+                </div>
+                <br><br>
+            </div>
+        </div>
+    </div>
+</section>
+<br><br>
+{% endblock content %}

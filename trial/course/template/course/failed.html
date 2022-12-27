@@ -1,0 +1,50 @@
+{% extends "index/base.html" %}
+{% load static %}
+{% load customFilter %}
+{% block content %}
+<div class="content-section">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="table-responsive">
+                <!--Table-->
+                <table class="table">
+                    <!--Table head-->
+                    <thead>
+                    <tr>
+                        <th> </th>
+                        <th class="th-lg">Student</th>
+                        <th class="th-lg">Course</th>
+                        <th class="th-lg">Instructor</th>
+                        <th class="th-lg">Test Details</th>
+                    </tr>
+                    </thead>
+                    <!--Table body-->
+                    <tbody>
+                    {% for course in courses %}
+                        {% for record in records|in_course:course %}
+                            <tr>
+                                <th scope="row"></th>
+                                    <td><a href="{% url 'another-user-profile' record.student.username %}">{{ record.student.username }}</a></td>
+                                    <td>{{ record.course_code }}</td>
+                                    <td>{{ course.instructor.username }}</td>
+                                    <td>{{ record.fail_details }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <div class="border-top pt-3">
+                <small class="text">Confirm to send?</small>
+                <br>
+                <button>
+                    <a class="ml-2" href="{% url 'send-failed' %}">Send Now!</a>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,53 @@
+{% extends "index/base.html" %}
+{% block content %}
+    <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Frequently Asked Questions</h2>
+                </div>
+
+                <ul class="faq-list">
+                    <li>
+                        <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">
+                            <span>How much does the training cost?</span>
+                        </div>
+                        <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                It is best to check with your Air Navigation Service Provider. Besides, Malaysia Aviation Academy does not accept private students.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">
+                            <span>What languages are required for training to be an air traffic controller?</span>
+                        </div>
+                        <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At consequatur deleniti dolorem ducimus eius est expedita impedit ipsam iure mollitia omnis pariatur, provident, qui quidem repellendus saepe sint totam vel.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">
+                            <span>Are there any courses for non-aviation personnel wishing to enter the aviation industry?</span>
+                        </div>
+                        <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae commodi dolores est illum nostrum odio quos recusandae, veniam! Adipisci culpa delectus, expedita hic maiores non provident rerum vel veritatis voluptatum?
+                                </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">
+                            <span>Can I apply directly to Malaysia Aviation Academy?</span>
+                        </div>
+                        <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium consequatur consequuntur cupiditate dolore ex fugiat iste labore magnam maxime, nesciunt non odio quam quas quis quod, sit sunt unde!
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+{% endblock content %}

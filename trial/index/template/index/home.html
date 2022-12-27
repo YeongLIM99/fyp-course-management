@@ -1,0 +1,141 @@
+{% extends "index/base.html" %}
+{% load static %}
+{% block content %}
+<section class="home">
+    <section class="home-section-1">
+        <div class="home-title">
+            What you should know of aviation?
+        </div>
+        <div class="home-section-1-main">
+            <!--Required to be changed then-->
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="2000">
+                        <img src="{% static 'index/home_pic_1.jpg' %}" class="home_image" alt="{% static 'index/green-bg.PNG' %}">
+                        <div class="carousel-caption d-md-block">
+                            <h3 class="home-section-1-subtitle"><strong>Vision & Mission</strong></h3>
+                            <p class="home-section-1-text">
+                                Vision: To become one of the leading key players in the world's aviation training and education
+                                in terms of quality and professionalism
+                            </p>
+                            <p class="home-section-1-text">
+                                Mission: To unify resources, experience and knowledge in education and training of aviation
+                                personnel globally and offer this combined knowledge to the whole world.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="{% static 'index/home_pic_3.jpg' %}" class="home_image" alt="{% static 'index/green-bg.PNG' %}">
+                        <div class="carousel-caption d-md-block">
+                            <h3 class="home-section-1-subtitle"><strong>Simulators</strong></h3>
+                            <p class="home-section-1-text">
+                                To enhance and maintain complex skills, participants need a state-of-the-art and powerful simulator
+                                infrastructure for their practical training. Malaysia Aviation Academy has a wide variety of modern
+                                technologies and tailored services to offer clients looking for innovative, effective and cost-containing solutions.
+                            </p>
+                            <p class="home-section-1-text">
+                                At our training academy, our ATC simulator professionals work closely with clients to design
+                                and implement unique and realistic simulation scenario layouts, both in terms of the visual
+                                environment and exercise data preparation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="home-section-2">
+        <div class="home-title-2">
+            Courses Available
+        </div>
+        <div class="flip-card-container">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="c1 flip-card-front">
+                        <img src="{% static 'index/051.png' %}" alt="" width="400px">
+                        <div>Primary ATC</div>
+                    </div>
+                    <div class="c1 flip-card-back">
+                        The course is designed to provide the participants with a comprehensive introduction to Air Traffic Services
+                        in general and to develop specific theoretical skills in Air Traffic Services procedures and techniques required
+                        as essential base knowledge prior to rating training.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card-container">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="c2 flip-card-front">
+                        <img src="{% static 'index/052.png' %}" alt="" width="400px">
+                        <div>Aerodrome Control</div>
+                    </div>
+                    <div class="c2 flip-card-back">
+                        The course is designed to impart knowledge, skills and attitudes to student air traffic controllers in order to
+                        enable them to receive a student certificate of competency for ICAO Aerodrome Control Instrument rating with Tower.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card-container">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="c3 flip-card-front">
+                        <img src="{% static 'index/053.png' %}" alt="" width="400px">
+                        <div>Approach Procedural</div>
+                    </div>
+                    <div class="c3 flip-card-back">
+                        The course is designed to impart knowledge and skills to students that are necessary for them to receive a student
+                        air traffic controller license for an Approach Control Non-Radar endorsement.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card-container">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="c4 flip-card-front">
+                        <img src="{% static 'index/054.png' %}" alt="" width="400px">
+                        <div>Approach Survelliance</div>
+                    </div>
+                    <div class="c4 flip-card-back">
+                        The course is designed to impart knowledge and skills to participants which is necessary for them to receive an
+                        air traffic controller license for an Approach Radar Control rating.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card-container">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="c5 flip-card-front">
+                        <img src="{% static 'index/055.png' %}" alt="" width="400px">
+                        <div>Area Procedural</div>
+                    </div>
+                    <div class="c5 flip-card-back">
+                        The course is designed to impart knowledge and skills to students that are necessary for them to receive a
+                        student air traffic controller license for an Area Control Non Radar rating.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+{% endblock content %}

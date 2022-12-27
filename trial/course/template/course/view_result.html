@@ -1,0 +1,61 @@
+{% extends "index/base.html" %}
+{% load static %}
+{% load customFilter %}
+{% block content %}
+<div class="content-section">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="table-responsive">
+                <!--Table-->
+                <table class="table">
+                    <!--Table head-->
+                    <thead>
+                    <tr>
+                        <th> </th>
+                        <th class="th-lg">Course</th>
+                        <th class="th-lg">Instructor</th>
+                        <th class="th-lg">Status</th>
+                        <th class="th-lg">Date completed</th>
+                        <th class="th-lg">GPA</th>
+                        <th class="th-lg">Total hours of training</th>
+                    </tr>
+                    </thead>
+                    <!--Table body-->
+                    <tbody>
+                    {% for course in courses %}
+                        <tr>
+                            <th scope="row"></th>
+                            <td>{{ course.course_code }}</td>
+                            <td><a href="{% url 'another-user-profile' course.instructor.username %}"> {{ course.instructor.username }}</a></td>
+                            {% for record in records|course_match:course %}
+                                <td>{{ record.student_status }}</td>
+                                {% if record.student_status == "Completed" %}
+                                    <td>{{ record.date_completed }}</td>
+                                    <td>{{ record.gpa }}</td>
+                                    <td>{{ record.total_hours }}</td>
+                                {% else %}
+                                    <td>Course Not Completed</td>
+                                    <td>Course Not Completed</td>
+                                    <td>Course Not Completed</td>
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <div class="border-top pt-3">
+                <small class="text">Back to home page?</small>
+                <br>
+                <button>
+                    <a class="ml-2" href="{% url 'index-home' %}">Home</a>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+{% endblock content %}

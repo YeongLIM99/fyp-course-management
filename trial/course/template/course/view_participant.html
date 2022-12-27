@@ -1,0 +1,56 @@
+{% extends "index/base.html" %}
+{% load static %}
+{% block content %}
+<div class="content-section">
+    {% csrf_token %}
+    {% if user.is_authenticated %}
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            {% if user.is_superuser or user == course.instructor or user in course.student.all %}
+            <div class="table-responsive">
+                <!--Table-->
+                <table class="table">
+                    <!--Table head-->
+                    <thead>
+                        <tr>
+                            <th class="th-lg">Username</th>
+                            <th class="th-lg">Identity</th>
+                            <th class="th-lg">Status</th>
+                            <th class="th-lg">Completion status</th>
+                        </tr>
+                    </thead>
+                    <!--Table body-->
+                    <tbody>
+                        <tr>
+                            <td><a href="{% url 'another-user-profile' course.instructor.username %}">{{ course.instructor.username }}</a></td>
+                            <td>Instructor</td>
+                            <td>Teaching</td>
+                        </tr>
+
+                        {% for student in students %}
+                            <tr>
+                                <td><a href="{% url 'another-user-profile' student.student.username %}">{{ student.student.username }}</a></td>
+                                <td>Trainee</td>
+                                <td>Enrolling</td>
+                                <td>{{ student.pass_status }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+            <br>
+            <div class="border-top pt-3">
+                <small class="text">Back to home page?</small>
+                <br>
+                <button>
+                    <a class="ml-2" href="{% url 'index-home' %}">Home</a>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}
