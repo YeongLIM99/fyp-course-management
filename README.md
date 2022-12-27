@@ -40,4 +40,4 @@ For the 6th function, the conditions to be examined are:
 - Trainee have completed the prerequisite course of the selected course if exist
 - Enrolment request is done in duration of enrolment data
 
-##### Further details can be checked in the text files and charts that I attached in the repo. 
+##### Further details can be checked in this google doc: https://docs.google.com/document/d/1LJSrE4e8wYScYfiq7vFU78zpAsB2EXofUHYZ49Y0xow/edit?usp=share_link
